@@ -1,0 +1,71 @@
+.profile-page{
+    .customer-profile{
+        .profile{
+            width: 104px;
+            height: 104px;
+            border-radius: 50%;
+            position: relative;
+            margin-bottom: 40px;
+
+            @include breakpoint(desktop){
+                width: 90px;
+                height: 90px;
+                margin-bottom: 30px;
+            }
+
+            @include breakpoint(laptop){
+                width: 80px;
+                height: 80px;
+            }
+
+            figure{
+                width: 100%;
+                height: 100%;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                }
+            }
+
+            .edit{
+                position: absolute;
+                border: 2px solid $color_white;
+                width: 24px;
+                height: 24px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                top: 5px;
+                right: 3px;
+                background-color: $color_primary;
+                border-radius: 50%;
+
+                @include breakpoint(desktop){
+                    width: 20px;
+                    height: 20px;
+                }
+
+                @include breakpoint(laptop){
+                    top: 0px;
+                    right: 0px;
+                }
+
+                i{
+                    color: $color_white;
+                    font-size: 10px;
+
+                    @include breakpoint(desktop){
+                        font-size: 8px;
+                    }
+                }
+            }
+        }
+
+        .row{
+            --bs-gutter-x: 30px;
+        }
+    }
+}

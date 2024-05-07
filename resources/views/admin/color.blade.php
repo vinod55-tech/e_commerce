@@ -1,0 +1,64 @@
+@extends("layouts.admin.header-content")
+@section('content')
+<section class="dashboard">
+    <div class="common-heading">
+        <h1>Colors Page</h1>
+        <a href="{{route('add_color')}}" class="btn btn-primary btn-lg float-right">Add</a>
+    </div>
+    <div id="message">
+
+    </div>
+    <div class="table-detail">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody id="all_colors">
+                <!-- appended datas are here -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('#message').html(localStorage.getItem('message'));
+                // geting data
+                $.ajax({
+                    url:'/api/color-list',
+                    type:'GET',
+                    success: function(response){
+                        $('#all_colors').append(response.data);
+                    }
+                });
+
+                // remove message
+                $('#message').click(function(){
+                    localStorage.removeItem('message');
+                    $('#message').empty();
+                });
+        });
+// delete color function
+        function deletefunction(id){
+            $.ajax({
+                url:'/api/delete-color/'+id+'',
+                type:'GET',
+                success: function(response){
+                    if(response.status === "success"){
+                        $('#all_colors').load();
+                        $('#message').html('<div class="alert alert-success">' + response.message + '</div>');
+                    }else{
+                        $('#message').html('<div class="alert alert-danger">' + response.message + '</div>');
+                    }
+                }
+
+            });
+
+        }
+
+    </script>
+    
+</section>
+@endsection

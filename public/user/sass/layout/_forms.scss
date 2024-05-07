@@ -1,0 +1,202 @@
+.form-group {
+    .control-group {
+        margin-bottom: 28px;
+        position: relative;
+
+        @include breakpoint(desktop) {
+            margin-bottom: 25px;
+        }
+
+        // @include breakpoint(mobile) {
+        //     margin-bottom: 40px;
+        // }
+    }
+}
+
+label {
+    font-size: rem(18px);
+    font-weight: 400;
+    color: $color_text;
+    margin-bottom: 10px;
+
+    @include breakpoint(desktop) {
+        margin-bottom: 5px;
+    }
+
+    @include breakpoint(laptop) {
+        font-size: rem(16px);
+    }
+
+    // @include breakpoint(mobile) {
+    //     font-size: rem(12px);
+    //     margin: 0 0 2px;
+    // }
+
+    .required {
+        color: #ff0000;
+    }
+
+    // @include breakpoint(min-ipad) {
+    //     &.floatingLabel {
+    //         margin: 0;
+    //         position: absolute;
+    //         left: 0;
+    //         top: 15px;
+    //         pointer-events: none;
+    //         display: inline-flex;
+    //         line-height: 1;
+    //         padding: 7.5px 12px 7.5px 0;
+    //         background: $color_white;
+    //         border-radius: 15px;
+    //         @include transition;
+
+    //         @include breakpoint(laptop) {
+    //             top: 12.5px;
+    //         }
+
+    //         @include breakpoint(ipad) {
+    //             top: 10px;
+    //         }
+
+
+
+    //         &.label_up {
+    //             top: 12px;
+    //             transform: translate(0%, -50%);
+    //             font-size: rem(13px);
+    //             padding: 0 0;
+    //             box-shadow: none;
+    //             color: #777;
+    //             background: transparent;
+
+    //             @include breakpoint(desktop) {
+    //                 font-size: 16px;
+    //                 top: 0;
+    //             }
+    //         }
+    //     }
+    // }
+
+    // &.floatingLabel {
+    //     @include breakpoint(mobile) {
+    //         margin-bottom: 3px;
+    //         position: absolute;
+    //         top: -18px;
+    //         left: 0;
+    //     }
+    // }
+
+    span{
+        font-size: 20px;
+        font-weight: 600;
+
+        @include breakpoint(desktop) {
+            font-size: rem(18px);
+        }
+    }
+}
+
+input {
+    @include form-style(15px, 60px, 2px 25px, $color_black, #FBFBFB, 1px, #DCDADA, 30px);
+
+    @include breakpoint(desktop) {
+        font-size: rem(14px);
+        height: 50px;
+    }
+
+    // @include breakpoint(ipad) {
+    //     height: 45px;
+    // }
+
+    &[type="checkbox"],
+    &[type="radio"] {
+        appearance: none;
+        border: 1px solid #9A9A9A;
+        min-width: 22px;
+        max-width: 22px;
+        height: 22px;
+        outline: none;
+        background-color: $color_white;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        
+        @include breakpoint(laptop) {
+            max-width: 20px;
+            min-width: 20px;
+            height: 20px;
+        }
+        
+        :before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: $color_white;
+            font-size: 20px;
+        }
+        
+        &:checked {
+            border: 1px solid $color_primary;
+            background-color: $color_primary;
+        }
+    }
+
+    &[type="checkbox"] {
+        border-radius: 2px;
+    }
+
+    &[type="radio"] {
+        border-radius: 50%;
+    }
+}
+
+select {
+    @include form-style(15px, 60px, 2px 25px, $color_black, #FBFBFB, 1px, #DCDADA, 30px);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 15px;
+
+    @include breakpoint(desktop) {
+        font-size: rem(14px);
+        height: 50px;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: rem(12px);
+        height: 40px;
+    }
+}
+
+textarea {
+    @include form-style(15px, 193px, 20px 5px, $color_black, #FBFBFB, 1px, #DCDADA, 15px);
+
+    @include breakpoint(desktop) {
+        font-size: rem(14px);
+        height: 150px;
+        padding: 10px 5px;
+    }
+}
+
+input,
+select,
+textarea {
+    &::placeholder {
+        opacity: 1;
+        color: #0000004d;
+    }
+
+    &:focus {
+        border-color: $color_primary;
+    }
+
+    &.error {
+        border-color: #ff0000;
+    }
+}

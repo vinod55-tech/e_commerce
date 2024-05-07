@@ -1,0 +1,193 @@
+.btn {
+    min-height: 56px;
+    min-width: 183px;
+    font-size: rem(18px);
+    padding: 5px 15px;
+    border-radius: 30px;
+    line-height: normal;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    // @include btn(400, inherit);
+    font-family: $font_body;
+    position: relative;
+    @include transition;
+    color: $color_white;
+    box-shadow: none;
+
+    @include breakpoint(desktop){
+        min-height: 50px;
+        min-width: 165px;
+        font-size: rem(16px);
+    }
+
+    // @include breakpoint(laptop){
+    //     min-width: 150px;
+    // }
+
+    // @include breakpoint(normal) {
+    //     min-height: 50px;
+    //     min-width: 150px;
+    //     font-size: rem(16px);
+    // }
+
+    // @include breakpoint(ipad) {
+    //     min-height: 45px;
+    //     min-width: 120px;
+    //     font-size: 14px;
+    // }
+
+    i {
+        font-size: 20px;
+        padding-right: 8px;
+        // line-height: 1;
+        // display: inline-flex;
+        // position: absolute;
+        // left: 35px;
+        // top: 50%;
+        // transform: translateY(-50%);
+
+        @include breakpoint(desktop){
+            font-size: 16px;
+            left: 30px;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    &:hover {
+        transform: translateY(-0.15em);
+    }
+
+    &-primary {
+        background-color: $color_primary;
+        border: 1px solid $color_primary;
+        color: $color_white;
+        // font-size: rem(18px);
+
+        // @include breakpoint(desktop){
+        //     font-size: rem(14px);
+        // }
+
+        &:hover {
+            background-color: $color_primary;
+            border-color: $color_primary;
+            color: $color_black;
+        }
+
+        &.br {
+            background-color: transparent;
+            border: 1px solid $color_white;
+            color: $color_white;
+
+            &:hover {
+                background-color: $color_primary;
+                border-color: $color_primary;
+            }
+        }
+    }
+
+    &-cancel{
+        background-color: #EFF4F8;
+        border: 1px solid #EFF4F8;
+        color: $color_black;
+
+        &:hover{
+            color: $color_primary;
+        }
+    }
+
+    &-secondary {
+        background-color: $color_secondary;
+        border: 1px solid $color_secondary;
+        color: $color_white;
+    }
+
+    &-sm {
+        min-width: 110px;
+        min-height: 45px;
+        font-size: 17px;
+        // padding: 5px 25px;
+        line-height: 1;
+
+        @include breakpoint(desktop){
+            font-size: 15px;
+        }
+
+        @include breakpoint(laptop){
+            min-width: 90px;
+            min-height: 40px;
+        }
+    }
+
+    &-lg {
+        min-height: 52px;
+        min-width: 203px;
+        font-size: rem(17px);
+        padding: 5px 25px;
+
+        @include breakpoint(desktop){
+            min-height: 45px;
+            min-width: 180px;
+            font-size: rem(15px);
+            padding: 5px 20px;
+        }
+
+        @include breakpoint(desktop){
+            min-height: 40px;
+            min-width: 160px;
+            padding: 5px 5px;
+        }
+
+        // span {
+        //     small {
+        //         font-weight: 300;
+        //         font-size: rem(12px);
+        //         display: block;
+        //         line-height: 1;
+        //     }
+        // }
+    }
+
+    &-ex-lg {
+        // min-height: 50px;
+        min-width: 272px;
+        font-size: rem(18px);
+        color: $color_white;
+        background-color: $color_delete;
+        padding: 5px 25px;
+
+        @include breakpoint(desktop){
+            min-width: 245px;
+            font-size: rem(16px);
+            padding: 5px 20px;
+        }
+
+        // span {
+        //     small {
+        //         font-weight: 300;
+        //         font-size: rem(12px);
+        //         display: block;
+        //         line-height: 1;
+        //     }
+        // }
+    }
+
+    &-200{
+        max-width: 200px;
+        padding: 15px 20px;
+    }
+
+    &-224{
+        max-width: 224px;
+        padding: 10px 10px;
+    }
+
+    &-del{
+        background-color: $color_delete;
+    }
+}
